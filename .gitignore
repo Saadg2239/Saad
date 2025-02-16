@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/CheckSurveyAutomation/FileContentIndex
+/.vs/slnx.sqlite
+/.vs/slnx.sqlite-journal
+/shelf/
+/workspace.xml
+/allure-results/
+/allure-report/
+/TestData/ScreenShots/
+/TestData/Data.xlsx
+/TestData/logo.jpg
+/TestData/sample.pdf
+Json files
+target/
+.idea/
+.vs/
+.metadata/
+*.iml
