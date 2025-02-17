@@ -27,8 +27,8 @@ public class TestBase {
     @BeforeTest
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*")
-                .addArguments("--incognito");
+        options.addArguments("--remote-allow-origins=*");
+               // .addArguments("--incognito");
         // .addArguments("--headless");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
@@ -49,10 +49,10 @@ public class TestBase {
         settingsPage = new SettingsPage(driver);
     }
 
-   /* @AfterTest
+   @AfterTest
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 
     public void switchTab() {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());

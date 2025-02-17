@@ -18,28 +18,31 @@ public class AddUserPage extends AddUserElements {
         return this;
     }
     @Step("set Full name ")
-    public AddUserPage setFullName() {
-        setText(newUserName,"Saad Gamal");
+    public AddUserPage setFullName(String name) {
+
+        setText(newUserName, name);
+
         return this;
+
     }
     @Step("set user name ")
-    public AddUserPage setUserName() {
-        setText(newUserUserName,"Saad22398");
+    public AddUserPage setUserName(String userName) {
+        setText(newUserUserName,userName);
         return this;
     }
     @Step("set code")
-    public AddUserPage setCode() {
-        setText(newUserCode,"22398");
+    public AddUserPage setCode(String code) {
+        setText(newUserCode,code);
         return this;
     }
     @Step("set Email ")
-    public AddUserPage setEmail() {
-        setText(newUserEmail,"sgamal@youxel.com");
+    public AddUserPage setEmail(String email) {
+        setText(newUserEmail,email);
         return this;
     }
     @Step("set Mobile ")
-    public AddUserPage setMobile() {
-        setText(newUserMobile,"12345678910");
+    public AddUserPage setMobile(String phone) {
+        setText(newUserMobile,phone);
         return this;
     }
     @Step("set Job ")

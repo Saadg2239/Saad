@@ -13,7 +13,7 @@ public class LoginElements extends PageBase {
     public By userNameFiled = By.id("login-email");
     public By passwordFiled = By.id("login-password");
     public By loginBtn = By.id("trigger-spinner");
-    public By usernameAssert = By.xpath("//div[text()='Check77']");
+    public By usernameAssert = By.xpath("//div[text()='Check7']");
     public By invaliedMSG = By.xpath("//span[text()='Invalid username or password']");
 
 }
