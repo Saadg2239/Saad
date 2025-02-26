@@ -16,12 +16,9 @@ public class TestBase {
     public LoginPage loginPage;
     //public DashboardPage dashboardPage;
     public LoginTests loginTests;
-    public AddUserTest addUserTest;
+    public AddItemToCartAndProcessedTests addItemToCartAndProcessedTests;
     public SurveysPage surveysPage;
-    public SurveyBuilder surveyBuilder;
    // public SurveysTests surveysTests;
-    public RulesPage rulesPage;
-    public SettingsPage settingsPage;
 
 
     @BeforeTest
@@ -35,22 +32,24 @@ public class TestBase {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
-        String url = "http://youxeldev.eastus.cloudapp.azure.com/Check/Portal/Account/Login";
+        String url = "https://automationexercise.com/";
         driver.navigate().to(url);
 
         loginPage = new LoginPage(driver);
         loginTests = new LoginTests();
-        addUserTest = new AddUserTest();
+        addItemToCartAndProcessedTests = new AddItemToCartAndProcessedTests();
         //dashboardPage = new DashboardPage(driver);
         //surveysTests = new SurveysTests();
         surveysPage = new SurveysPage(driver);
-        surveyBuilder = new SurveyBuilder(driver);
-        rulesPage = new RulesPage(driver);
-        settingsPage = new SettingsPage(driver);
     }
 
    @AfterTest
-    public void tearDown() {
+   public void tearDown() {
+       try {
+           Thread.sleep(10000); // Wait for 10 seconds before quitting
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
         driver.quit();
     }
 

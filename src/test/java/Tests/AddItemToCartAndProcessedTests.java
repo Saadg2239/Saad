@@ -1,25 +1,22 @@
 package Tests;
 
-import Pages.AddUserPage;
+import Pages.AddItemToCartAndProcessedPage;
 import Pages.LoginPage;
-import org.openqa.selenium.WebDriver;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import static Pages.PageBase.generateRNumber;
 
-
-public class AddUserTest extends TestBase{
+public class AddItemToCartAndProcessedTests extends TestBase{
   //  private final Faker faker = new Faker();
     String loginTestData = "TestData/Data/login.json";
     SoftAssert softAssert = new SoftAssert();
     LoginPage loginPage = new LoginPage(driver);
-    AddUserPage addUserPage = new AddUserPage(driver);
+    AddItemToCartAndProcessedPage addItemToCartAndProcessedPage = new AddItemToCartAndProcessedPage(driver);
 
-    // In AddUserTest class
+    // In AddItemToCartAndProcessedTests class
 
-    @Test(priority = 1, enabled = true)
+   /* @Test(priority = 1, enabled = true)
     public void AddNewUser() {
         loginTests.LoginWithValiedCredentiales();
         Faker faker = new Faker();
@@ -29,7 +26,7 @@ public class AddUserTest extends TestBase{
         String email = faker.internet().emailAddress();
         String mobile = faker.phoneNumber().cellPhone().replaceAll("[^0-9]", "");
 
-        addUserPage.getToUserPage()
+        addItemToCartAndProcessedPage.getToUserPage()
                 .setFullName(fullName)
                 .setUserName(userName)
                 .setCode(code)
@@ -39,8 +36,20 @@ public class AddUserTest extends TestBase{
                 .clickOnSave()
                 .assertOnSuccses("The user has been added successfully");
         softAssert.assertAll();
+    }*/
+    @Test(priority = 1,enabled = true)
+    public void scrollToElemnt(){
+        loginPage.clicOnSignUpLoginBtn()
+                        .login();
+        addItemToCartAndProcessedPage.scrollToItem()
+                .viewCart()
+                .proceedToCheckout()
+                .scrollToPlaceOrder()
+                .addPayment()
+                .assertOnCongMsg("Congratulations! Your order has been confirmed!");
+        softAssert.assertAll();
     }
-       /* addUserPage.getToUserPage()
+       /* addItemToCartAndProcessedPage.getToUserPage()
                 .setFullName()
                 .setUserName()
                 .setCode()

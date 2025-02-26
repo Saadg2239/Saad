@@ -11,6 +11,19 @@ public class LoginPage extends LoginElements {
         super(driver);
     }
 
+    @Step("get to Login")
+    public LoginPage clicOnSignUpLoginBtn(){
+        click(signUpLoginBtn);
+        return this;
+    }
+    @Step("LOGIN STEP")
+    public LoginPage login(){
+        setText(emailFiled,"saad@gamal.com");
+        setText(passwordFiled,"123456");
+        click(loginBtn);
+        return this;
+    }
+
     @Step("set user name ")
     public LoginPage setUserName() {
         setText(userNameFiled,"check7");
@@ -18,12 +31,12 @@ public class LoginPage extends LoginElements {
     }
     @Step("set Password ")
     public LoginPage serPassword() {
-        setText(passwordFiled,"P@ssw0rd");
+        setText(passwordFiled2,"P@ssw0rd");
         return this;
     }
     @Step("click on login BTN")
     public LoginPage clickonLogin(){
-        click(loginBtn);
+        click(loginBtn2);
         return this;
     }
     @Step("Assert on Login ")
@@ -38,7 +51,7 @@ public class LoginPage extends LoginElements {
     }
     @Step("set Invalied Password ")
     public LoginPage serInvaliedPassword() {
-        setText(passwordFiled,"P@");
+        setText(passwordFiled2,"P@");
         return this;
     }
     @Step("assert On Invalied MSH")
